@@ -3,22 +3,16 @@ library(broom)
 theme_set(theme_classic())
 
 library(readr)
-notasmatesingles <- read_csv("A CURSO NO PARAMETRICA/CLASES/2. Distribuciones y varianzas de grupos/2.6 Analizando distribuciones en Python/notasmatesingles.csv")
+notasmatesingles <- read_csv("2. Distribuciones y varianzas de grupos/2.6 Analizando distribuciones en R/notasmatesingles.csv")
 View(notasmatesingles)
+
 
 plot(notasmatesingles$Matematicas,notasmatesingles$Ingles)
 
 #Modelo de regresion lineal
 model <- lm(Ingles ~ Matematicas, data = notasmatesingles)
 model
-model.diag.metrics <- augment(model)
-head(model.diag.metrics)
 
-#Grafico linea de regresion sobre los datos
-ggplot(model.diag.metrics, aes(Matematicas, Ingles)) +
-  geom_point() +
-  stat_smooth(method = lm, se = FALSE) +
-  geom_segment(aes(xend = Matematicas, yend = .fitted), color = "red", size = 0.3)
 
 #Graficos de diagnosis
 par(mfrow = c(2, 2))
@@ -40,7 +34,7 @@ x.test <- shapiro.test(res)
 x.test
 p_value_thresh=0.05
 
-#Definiendo la función que me devuelve si se cumple o no la hipotesis
+#Definiendo la funci?n que me devuelve si se cumple o no la hipotesis
 sw_test_results <- function(x.test,p_value_thresh) {
   if(x.test$p.value > p_value_thresh){
     print('Assumption satisfied')
@@ -56,7 +50,7 @@ sw_test_results <- function(x.test,p_value_thresh) {
 sw_test_results(x.test,p_value_thresh)
 
 
-plotn <- function(x,main="Histograma de frecuencias \ny distribución normal",
+plotn <- function(x,main="Histograma de frecuencias \ny distribuci?n normal",
                   xlab="X",ylab="Densidad") {
   min <- min(x)
   max <- max(x)
@@ -66,7 +60,7 @@ plotn <- function(x,main="Histograma de frecuencias \ny distribución normal",
   curve(dnorm(x,media,dt), min, max,add = T,col="blue")
 }
 
-plotn(res,main="Distribución normal")
+plotn(res,main="DistribuciÃ³n normal")
 
 
 
