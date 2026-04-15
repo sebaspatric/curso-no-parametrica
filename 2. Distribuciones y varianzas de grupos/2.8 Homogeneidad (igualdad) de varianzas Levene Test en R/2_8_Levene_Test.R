@@ -2,7 +2,7 @@ library(readr)
 library(car)
 
 ################### 2 grupos #################################
-homogeneidad2grupos <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/2. Distribuciones y varianzas de grupos/2.8 Homogeneidad (igualdad) de varianzas Levene Test en R/homogeneidad2grupos.csv")
+homogeneidad2grupos <- read_csv("2. Distribuciones y varianzas de grupos/2.8 Homogeneidad (igualdad) de varianzas Levene Test en R/homogeneidad2grupos.csv")
 View(homogeneidad2grupos)
 
 attach(homogeneidad2grupos)
@@ -21,7 +21,7 @@ rm(position)
 
 
 ################### 3 grupos #################################
-homogeneidad3grupos <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/2. Distribuciones y varianzas de grupos/2.8 Homogeneidad (igualdad) de varianzas Levene Test en R/homogeneidad3grupos.csv")
+homogeneidad3grupos <- read_csv("2. Distribuciones y varianzas de grupos/2.8 Homogeneidad (igualdad) de varianzas Levene Test en R/homogeneidad3grupos.csv")
 View(homogeneidad3grupos)
 attach(homogeneidad3grupos)
 homogeneidad3grupos$position=as.factor(homogeneidad3grupos$position)
