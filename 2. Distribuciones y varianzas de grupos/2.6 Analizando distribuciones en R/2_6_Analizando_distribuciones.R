@@ -3,7 +3,7 @@ library(broom)
 theme_set(theme_classic())
 
 library(readr)
-notasmatesingles <- read_csv("A CURSO NO PARAMETRICA/CLASES/2. Distribuciones y varianzas de grupos/2.6 Analizando distribuciones en Python/notasmatesingles.csv")
+notasmatesingles <- read_csv("2. Distribuciones y varianzas de grupos/2.6 Analizando distribuciones en R/notasmatesingles.csv")
 View(notasmatesingles)
 
 plot(notasmatesingles$Matematicas,notasmatesingles$Ingles)
@@ -40,7 +40,7 @@ x.test <- shapiro.test(res)
 x.test
 p_value_thresh=0.05
 
-#Definiendo la función que me devuelve si se cumple o no la hipotesis
+#Definiendo la funci?n que me devuelve si se cumple o no la hipotesis
 sw_test_results <- function(x.test,p_value_thresh) {
   if(x.test$p.value > p_value_thresh){
     print('Assumption satisfied')
@@ -56,7 +56,7 @@ sw_test_results <- function(x.test,p_value_thresh) {
 sw_test_results(x.test,p_value_thresh)
 
 
-plotn <- function(x,main="Histograma de frecuencias \ny distribución normal",
+plotn <- function(x,main="Histograma de frecuencias \ny distribuci?n normal",
                   xlab="X",ylab="Densidad") {
   min <- min(x)
   max <- max(x)
@@ -66,7 +66,7 @@ plotn <- function(x,main="Histograma de frecuencias \ny distribución normal",
   curve(dnorm(x,media,dt), min, max,add = T,col="blue")
 }
 
-plotn(res,main="Distribución normal")
+plotn(res,main="Distribuci?n normal")
 
 
 
