@@ -1,5 +1,5 @@
 library(readr)
-salaries <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/3. Mann-Whitney dos grupos independientes/3.5 Ejemplo 2 R/salaries.csv")
+salaries <- read_csv("3. Mann-Whitney dos grupos independientes/3.5 Ejemplo 2 R/salaries.csv")
 View(salaries)
 
 #Mann-Whitney 2 grupos independientes 
@@ -19,7 +19,7 @@ x.test2
 p_value_thresh=0.05
 
 
-#Definiendo la función que me devuelve si se cumple o no la hipotesis
+#Definiendo la funci?n que me devuelve si se cumple o no la hipotesis
 sw_test_results <- function(x.test,p_value_thresh) {
   if(x.test$p.value > p_value_thresh){
     print('Assumption satisfied')
@@ -31,8 +31,8 @@ sw_test_results <- function(x.test,p_value_thresh) {
   
 }
 
-#Definiendo la función del grafico de distribucion Normal
-plotn <- function(x,main="Histograma de frecuencias \ny distribución normal",
+#Definiendo la funci?n del grafico de distribucion Normal
+plotn <- function(x,main="Histograma de frecuencias \ny distribuci?n normal",
                   xlab="X",ylab="Densidad") {
   min <- min(x)
   max <- max(x)
@@ -44,14 +44,14 @@ plotn <- function(x,main="Histograma de frecuencias \ny distribución normal",
 
 #Probando la funcion sobre res1 
 sw_test_results(x.test1,p_value_thresh)
-plotn(res1,main="Distribución normal")
+plotn(res1,main="DistribuciÃ³n normal")
 #Probando la funcion sobre res2 
 sw_test_results(x.test2,p_value_thresh)
-plotn(res2,main="Distribución normal")
+plotn(res2,main="DistribuciÃ³n normal")
 
 ### No se cumple la normalidad para uno de los residuos
 
-### Vamos a  usar la prueba no paramétrica de Mann-Whitney
+### Vamos a  usar la prueba no param?trica de Mann-Whitney
 
 attach(salaries)
 w=wilcox.test(Salary~Position)
