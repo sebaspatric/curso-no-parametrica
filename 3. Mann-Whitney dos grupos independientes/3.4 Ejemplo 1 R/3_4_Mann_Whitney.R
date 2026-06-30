@@ -1,5 +1,5 @@
 library(readr)
-forceps <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/3. Mann-Whitney dos grupos independientes/3.4 Ejemplo 1 R/forceps.csv")
+forceps <- read_csv("3. Mann-Whitney dos grupos independientes/3.4 Ejemplo 1 R/forceps.csv")
 View(forceps)
 
 
@@ -19,5 +19,5 @@ if(w$p.value > p_value_thresh){
   cat('Rechazamos H0: Hay diferencias significativas entre los 2 grupos')
 }
 
-# Hay diferencias significativas entre los 2 grupos: pero ¿Jumbo extrae mayor tejido? --> Sí:
+# Hay diferencias significativas entre los 2 grupos: pero ?Jumbo extrae mayor tejido? --> S?:
 wilcox.test(Resection~Forceps, alternative = c("less"))
