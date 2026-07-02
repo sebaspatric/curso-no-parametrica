@@ -1,5 +1,5 @@
 library(readr)
-wine <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/6. Friedman/6.3 Ejemplo R/wine.csv")
+wine <- read_csv("6. Friedman/6.3 Ejemplo R/wine.csv")
 View(wine)
 
 attach(wine)
@@ -27,7 +27,7 @@ wt=c(rep("pinecreek",times=10), rep("saintjude",times=10),
 mi_df=cbind(mi_df, WineType=wt)
 
 #Comparaciones a pares de grupos:
-#Corrección de Bonferroni 
+#Correcci?n de Bonferroni 
 anew=0.05/10
 anew
 attach(mi_df)
@@ -35,5 +35,36 @@ pairwise.wilcox.test(rating, WineType, p.adj = "bonf")
 
 
 
+##########################
+res <- pairwise.wilcox.test(
+  rating,
+  WineType,
+  p.adj = "bonf"
+)
 
+
+pvals1 <- res$p.value
+
+cat("Comparaciones significativas (p ajustado < 0.05):\n")
+
+which(pvals1 < 0.05, arr.ind = TRUE)
+
+
+pvals <- res$p.value
+
+for(i in seq_len(nrow(pvals))){
+  for(j in seq_len(ncol(pvals))){
+    if(!is.na(pvals[i,j])){
+      
+      cat(
+        rownames(pvals)[i], "vs",
+        colnames(pvals)[j], ": p =",
+        round(pvals[i,j], 5),
+        ifelse(pvals[i,j] < 0.05,
+               " -> Diferencia significativa\n",
+               " -> No significativa\n")
+      )
+    }
+  }
+}
 
