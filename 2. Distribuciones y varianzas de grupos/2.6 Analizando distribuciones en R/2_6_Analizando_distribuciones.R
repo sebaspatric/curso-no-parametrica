@@ -18,7 +18,7 @@ head(model.diag.metrics)
 ggplot(model.diag.metrics, aes(Matematicas, Ingles)) +
   geom_point() +
   stat_smooth(method = lm, se = FALSE) +
-  geom_segment(aes(xend = Matematicas, yend = .fitted), color = "red", size = 0.3)
+  geom_segment(aes(xend = Matematicas, yend = .fitted), color = "red", linewidth = 0.3)
 
 #Graficos de diagnosis
 par(mfrow = c(2, 2))
