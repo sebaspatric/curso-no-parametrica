@@ -1,6 +1,6 @@
 library(ggplot2)
 library(readr)
-pinetree <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/7. Correlación rho Spearman/7.5 Ejemplo 2 R/pinetree.csv")
+pinetree <- read_csv("7. CorrelaciÃ³n rho Spearman/7.5 Ejemplo 2 R/pinetree.csv")
 View(pinetree)
 
 ggplot(pinetree, aes(x=beetle_density, y=pine_population)) + 
@@ -36,6 +36,21 @@ autoplot(model)
 par(mfrow = c(1, 1))
 plot(model, 2)
 
+###########################
+
+
+graphics.off()
+
+par(
+  mfrow = c(2,2),
+  mar = c(2,2,2,1)
+)
+
+plot(model)
+
+###########
+
+
 #Residuos
 res=model$residuals
 
@@ -44,7 +59,7 @@ x.test <- shapiro.test(res)
 x.test
 p_value_thresh=0.05
 
-#Definiendo la función que me devuelve si se cumple o no la hipotesis
+#Definiendo la funci?n que me devuelve si se cumple o no la hipotesis
 sw_test_results <- function(x.test,p_value_thresh) {
   if(x.test$p.value > p_value_thresh){
     print('Assumption satisfied')
@@ -77,10 +92,10 @@ corr
 p_value_thresh=0.05
 if(corr$p.value > p_value_thresh){
   cat('pvalor =',w$p.value, "\n")
-  cat('No rechazamos H0: Correlación no significativa.')
+  cat('No rechazamos H0: Correlaci?n no significativa.')
 } else {
   cat('pvalor =',corr$p.value, "\n")
-  cat('Rechazamos H0: Correlación significativa.', "\n")
+  cat('Rechazamos H0: Correlaci?n significativa.', "\n")
   cat('corr coef =', corr$estimate)
 }
 
