@@ -1,13 +1,13 @@
 library(readr)
-boxplot2groups <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/8. Gráficos/8.3 Boxplot Ejemplos R/boxplot2groups.csv")
+boxplot2groups <- read_csv("8. GrÃ¡ficos/8.3 Boxplot Ejemplos R/boxplot2groups.csv")
 View(boxplot2groups)
 
 library(readr)
-boxplot4groups <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/8. Gráficos/8.3 Boxplot Ejemplos R/boxplot4groups.csv")
+boxplot4groups <- read_csv("8. GrÃ¡ficos/8.3 Boxplot Ejemplos R/boxplot4groups.csv")
 View(boxplot4groups)
 
 library(readr)
-boxplotrep <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/8. Gráficos/8.3 Boxplot Ejemplos R/boxplotrep.csv")
+boxplotrep <- read_csv("8. GrÃ¡ficos/8.3 Boxplot Ejemplos R/boxplotrep.csv")
 View(boxplotrep)
 
 #Boxplot dos grupos:
