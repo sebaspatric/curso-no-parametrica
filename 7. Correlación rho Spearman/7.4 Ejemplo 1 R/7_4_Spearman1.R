@@ -1,6 +1,7 @@
 library(ggplot2)
 library(readr)
-employeeratings <- read_csv("~/A CURSO NO PARAMETRICA/CLASES/7. Correlaci髇 rho Spearman/7.4 Ejemplo 1 R/employeeratings.csv")
+#7. Correlaci贸n rho Spearman/7.4 Ejemplo 1 R/employeeratings.csv
+employeeratings <- read_csv("7. Correlaci贸n rho Spearman/7.4 Ejemplo 1 R/employeeratings.csv")
 View(employeeratings)
 
 
@@ -14,10 +15,10 @@ corr
 p_value_thresh=0.05
 if(corr$p.value > p_value_thresh){
   cat('pvalor =',w$p.value, "\n")
-  cat('No rechazamos H0: Correlaci髇 no significativa.')
+  cat('No rechazamos H0: Correlaci贸n no significativa.')
 } else {
   cat('pvalor =',corr$p.value, "\n")
-  cat('Rechazamos H0: Correlaci髇 significativa.', "\n")
+  cat('Rechazamos H0: Correlaci贸n significativa.', "\n")
   cat('corr coef =', corr$estimate)
 }
 
